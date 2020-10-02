@@ -1,14 +1,20 @@
-import axios from 'axios'
+import axios from "axios";
 
-const key = process.env.REACT_APP_API_KEY
-const root = process.env.REACT_APP_ROOT_URL
-const test = `artist.search?format=jsonp&callback=callback&q_artist=cardi&apikey=${key}`
+const key = process.env.REACT_APP_API_KEY;
+const root = process.env.REACT_APP_ROOT_URL;
 
 const API = {
-    getLyrics: async () => {
-        const res = await axios.get(`${root}${test}`)
-        return res
-    }
-}
+  getArtist: async input => {
+    const res = await dispatcher(`artist.search?q_artist=${input}`);
+    return res;
+  }
+};
 
-export { API }
+const dispatcher = async searchQuery => {
+  const res = await axios.get(
+    `${root}${searchQuery}&apikey=${key}&format=jsonp&callback=calllback`
+  );
+  return res;
+};
+
+export { API };
