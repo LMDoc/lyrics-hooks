@@ -3,7 +3,7 @@ import { API } from "./api/index";
 import "./App.css";
 import "fontsource-roboto";
 
-import Button from "@material-ui/core/Button";
+import SearchBar from "./componants/search";
 
 function App() {
   useEffect(() => {
@@ -13,9 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
+      <SearchBar />
     </div>
   );
 }

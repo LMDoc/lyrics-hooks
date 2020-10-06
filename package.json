@@ -9,7 +9,9 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "fontsource-roboto": "^3.0.3",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-autosuggest": "^10.0.2",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
   },
