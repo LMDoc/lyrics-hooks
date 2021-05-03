@@ -1,20 +1,20 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import { Autocomplete } from "./autocomplete";
+import { TextInput as SearchBarInput } from '../inputs/TextInput'  
 
 const Searchbar = props => {
   return (
     <div>
-      <AppBar position="static">
+      <>
         <Toolbar>
-          <Typography variant="title" color="inherit">
-            Lyric Search or something...
-          </Typography>
-          <Autocomplete />
+          <SearchBarInput
+            placeholder='Search Artist, Song name, Lyrics and more...'
+            type='search'
+            fullWidth
+            variant="filled"
+          />
         </Toolbar>
-      </AppBar>
+      </>
     </div>
   );
 };

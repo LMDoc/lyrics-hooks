@@ -1,20 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { API } from "./api/index";
+import { MainContainer } from './componants/containers/MainContainer'
 import "./App.css";
 import "fontsource-roboto";
 
 import SearchBar from "./componants/search";
 
 function App() {
+  const [searchResults, setSearchResults] = useState([])
+
   useEffect(() => {
-    const list = API.getArtist("cardi");
-    console.log(list);
-  });
+    API.getArtist("cardi").then((res) => setSearchResults(res))
+  }, []);
+
+  console.log(searchResults)
 
   return (
-    <div className="App">
+    <>
       <SearchBar />
-    </div>
+      <MainContainer maxWidth='100%' height='100%'>
+      </MainContainer>
+    </>
   );
 }
 
